@@ -4,6 +4,8 @@
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
+$(document).ready(function(){
+
 
 // make multiple timeblocks
 // rename timeblocks accordingly with standard work hours
@@ -12,7 +14,7 @@
 // the save button is to save input into the timeblock into local storage
 $('.saveBtn').on('click', function(){
   //use DOM traversal to get time block id
-  var timeBlockID = $(this).closest('time-block').attr('id');
+  var timeBlockID = $(this).closest('.time-block').attr('id');
   //use id as key to save input in local storage
   var userInput = $(this).siblings('.description').val();
   localStorage.setItem(timeBlockID, userInput)
@@ -52,7 +54,7 @@ $('.time-block').each(function() {
 $('.time-block').each(function() {
   var timeBlockID =$(this).attr('id');
   var storedInput = localStorage.getItem(timeBlockID);
-  $(this).find('description').val(storedInput);
+  $(this).find('.description').val(storedInput);
 }
 
 );
@@ -70,3 +72,4 @@ $('.time-block').each(function() {
 var currentDate = dayjs().format('MMM D, YYYY');
 $('#currentDay').text(currentDate);
 
+})
