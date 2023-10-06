@@ -30,7 +30,7 @@ $('.saveBtn').on('click', function(){
 // create an array and place DOM nodes in the array / DOM node: grabs an element on the page.
 // Use loop to iterate through array to compare to current date/time using dayjs()
 // assign past, present, and future classes
-var currentHour = dayjs().format('H');//24 hour format?
+var currentHour = dayjs().format('H');
 console.log("current hour",currentHour)
 $('.time-block').each(function() {
   var timeBlockHour = parseInt($(this).attr('id').split('-')[1]);
@@ -59,16 +59,11 @@ $('.time-block').each(function() {
 
 );
 
-
-
-
-
 //TODO: Add code to display the current date in the header of the page.
 
 // make a variable that is for the current day with dayjs
 // set all dates in currentDate to variable of dayjs()
 // 1 object per time slot / or 1 that encompasses all of them
-//does not work to display current date in header....?
 var currentDate = dayjs().format('MMM D, YYYY');
 $('#currentDay').text(currentDate);
 
